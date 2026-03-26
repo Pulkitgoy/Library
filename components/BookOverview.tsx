@@ -35,7 +35,6 @@ const BookOverview = ({ title , author , genre , rating , total_copies , availab
         <Image src="/icons/book.svg" alt="book" width={20} height={20}/>
         <p className='font-bebas-neue text-xl text-dark-100'>Borrow</p>
       </Button>
-
       <div className='relative flex flex-1 justify-center'>
         <div className='relative'>
           <BookCover 
@@ -54,6 +53,7 @@ const BookOverview = ({ title , author , genre , rating , total_copies , availab
             />
           </div>
         </div>
+
       </div>
     </div>
   </section>
