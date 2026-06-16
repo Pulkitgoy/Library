@@ -1,20 +1,14 @@
-import AuthForm from '@/components/AuthForm'
-import { SignUpSchema } from '@/lib/validations'
-import React from 'react'
+import AuthForm from "@/components/AuthForm";
+import { signUp } from "@/app/actions/auth";
+import type { Metadata } from "next";
 
-const Page = () => (
-  <AuthForm 
-    type="SIGN_UP" 
-    schema={SignUpSchema} 
-    defaultValues={{
-      fullname:"",
-      email:"",
-      universityId:0,
-      universityCard:"",
-      password:"",
-    }}
-    onSubmit={()=>{}}
-  />
-)
+export const metadata: Metadata = {
+  title: "Sign Up | BookWise",
+  description: "Create a BookWise account to borrow and buy books from the library.",
+};
 
-export default Page
+const SignUpPage = () => (
+  <AuthForm type="SIGN_UP" action={signUp} />
+);
+
+export default SignUpPage;

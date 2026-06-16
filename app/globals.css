@@ -28,11 +28,11 @@
 
 @layer components {
   .form-btn {
-    @apply bg-primary text-dark-100 hover:bg-primary inline-flex min-h-14 w-full items-center justify-center rounded-md px-6 py-2 font-bold text-base;
+    @apply bg-primary text-dark-100 hover:bg-primary/90 active:scale-[0.98] inline-flex min-h-14 w-full items-center justify-center rounded-lg px-6 py-2 font-bold text-base transition-all duration-200 shadow-lg shadow-primary/20;
   }
 
   .form-input {
-    @apply w-full min-h-14 border-none text-base font-bold placeholder:font-normal text-white placeholder:text-light-100 focus-visible:ring-0 focus-visible:shadow-none bg-dark-300;
+    @apply w-full min-h-14 border border-dark-600 text-base font-bold placeholder:font-normal text-white placeholder:text-light-100/50 focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary/60 focus-visible:shadow-none bg-dark-300 rounded-lg transition-all duration-200;
   }
 
   /* Book Card */
@@ -240,7 +240,7 @@
 
   /* Auth */
   .auth-container {
-    @apply relative flex flex-col-reverse text-light-100 sm:flex-row;
+    @apply relative flex flex-col-reverse text-light-100 sm:flex-row min-h-screen;
   }
 
   .auth-form {
@@ -248,12 +248,18 @@
   }
 
   .auth-box {
-    @apply mx-auto flex max-w-xl flex-col gap-6 rounded-lg p-10;
-    background: linear-gradient(180deg, #12141d 0%, #12151f 100%);
+    @apply mx-auto flex w-full max-w-md flex-col gap-5 rounded-2xl p-8 sm:p-10;
+    background: linear-gradient(145deg, #1a1d2e 0%, #12141d 60%, #0f1119 100%);
+    border: 1px solid rgba(231, 201, 165, 0.08);
+    box-shadow:
+      0 0 0 1px rgba(231, 201, 165, 0.04),
+      0 24px 64px rgba(0, 0, 0, 0.5),
+      0 4px 16px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
   }
 
   .auth-illustration {
-    @apply sticky h-40 w-full sm:top-0 sm:h-screen sm:flex-1;
+    @apply sticky h-52 w-full sm:top-0 sm:h-screen sm:flex-1;
   }
 
   /* Root */

@@ -2,7 +2,10 @@ import React from 'react'
 import Image from "next/image"
 import { Button } from './ui/button'
 import BookCover from './BookCover'
-const BookOverview = ({ title , author , genre , rating , total_copies , available_copies , description , color , cover }:Book) => {
+import BookActions from './BookActions'
+
+const BookOverview = (book: Book) => {
+  const { title, author, genre, rating, total_copies, available_copies, description, color, cover } = book;
   return (
   <section className='book-overview'>
     <div className='flex flex-1 flex-col gap-5'>
@@ -31,10 +34,7 @@ const BookOverview = ({ title , author , genre , rating , total_copies , availab
 
       <p className='book-description'>{description}</p>
 
-      <Button className='book-overview_btn'>
-        <Image src="/icons/book.svg" alt="book" width={20} height={20}/>
-        <p className='font-bebas-neue text-xl text-dark-100'>Borrow</p>
-      </Button>
+      <BookActions book={book} />
       <div className='relative flex flex-1 justify-center'>
         <div className='relative'>
           <BookCover 

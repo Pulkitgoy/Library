@@ -1,17 +1,14 @@
-import AuthForm from '@/components/AuthForm'
-import { SignInSchema } from '@/lib/validations'
-import React from 'react'
+import AuthForm from "@/components/AuthForm";
+import { signIn } from "@/app/actions/auth";
+import type { Metadata } from "next";
 
-const Page = () => (
-  <AuthForm 
-    type="SIGN_IN" 
-    schema={SignInSchema} 
-    defaultValues={{
-      email:"",
-      password:"",
-    }}
-    onSubmit={()=>{}}
-  />
-)
+export const metadata: Metadata = {
+  title: "Sign In | BookWise",
+  description: "Sign in to your BookWise account to access the library.",
+};
 
-export default Page
+const SignInPage = () => (
+  <AuthForm type="SIGN_IN" action={signIn} />
+);
+
+export default SignInPage;
